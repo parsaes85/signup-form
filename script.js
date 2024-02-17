@@ -14,7 +14,12 @@ function inputCheck(input,text,innerText){
         input.classList.add('invalid')
         input.nextElementSibling.src = 'images/icon-error.png'
         text.innerText = innerText
-    }else{
+    }else if(input.value.length < 3) {
+        input.classList.add('invalid')
+        input.nextElementSibling.src = 'images/icon-error.png'
+        text.innerText = `${input.placeholder} need at least 3 character`
+    }
+    else{
         input.classList.remove('invalid')
         input.nextElementSibling.src = ''
         text.innerText = ''
